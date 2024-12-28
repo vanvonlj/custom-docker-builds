@@ -1,4 +1,4 @@
-FROM kasmweb/ubuntu-noble-desktop:develop
+FROM kasmweb/ubuntu-noble-desktop
 LABEL maintainer="borsatto at mail dot com"
 
 USER root
@@ -93,27 +93,27 @@ RUN apt upgrade -y
 RUN apt autoremove -y
 
 # Copying the modified custom_startup.sh (from kasm/terminal:1.15.0)
-# COPY custom_startup.sh /dockerstartup/custom_startup.sh
-# RUN chmod +x /dockerstartup/custom_startup.sh
+COPY custom_startup.sh /dockerstartup/custom_startup.sh
+RUN chmod +x /dockerstartup/custom_startup.sh
 
 # Installing Hack Nerd Font
 RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 RUN unzip Hack.zip -d /usr/local/share/fonts
 
 # Copying modified .bashrc file to the default profile home dir
-# COPY .bashrc /home/kasm-default-profile/
+COPY .bashrc /home/kasm-default-profile/
 
 # Copying terminal profile
-# COPY user /home/kasm-default-profile/.config/dconf/
-# COPY xfce4/ /home/kasm-default-profile/.config/
-# COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
+COPY user /home/kasm-default-profile/.config/dconf/
+COPY xfce4/ /home/kasm-default-profile/.config/
+COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
 
 
 # Adding Starship Theme
-# COPY starship.toml /home/kasm-default-profile/.config/
+COPY starship.toml /home/kasm-default-profile/.config/
 
 # Getting rid off the xfce4-panel
-# RUN chmod a-rwx /usr/bin/xfce4-panel
+RUN chmod a-rwx /usr/bin/xfce4-panel
 
 # Wallpaper
 # COPY wallpaper-kasm.jpg /usr/share/backgrounds/bg_default.png
