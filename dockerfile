@@ -7,9 +7,9 @@ RUN echo 'root:Kasm123!' | sudo chpasswd
 RUN echo 'kasm-user:Kasm123!' | sudo chpasswd
 
 # Fixing the dockerstartup dir
-COPY dockerstartup.zip /tmp/
-RUN unzip -o /tmp/dockerstartup.zip -d /
-RUN rm /tmp/dockerstartup.zip
+# COPY dockerstartup.zip /tmp/
+# RUN unzip -o /tmp/dockerstartup.zip -d /
+# RUN rm /tmp/dockerstartup.zip
 
 # Kasm
 ENV HOME=/home/kasm-default-profile
@@ -93,24 +93,24 @@ RUN apt upgrade -y
 RUN apt autoremove -y
 
 # Copying the modified custom_startup.sh (from kasm/terminal:1.15.0)
-COPY custom_startup.sh /dockerstartup/custom_startup.sh
-RUN chmod +x /dockerstartup/custom_startup.sh
+# COPY custom_startup.sh /dockerstartup/custom_startup.sh
+# RUN chmod +x /dockerstartup/custom_startup.sh
 
 # Installing Hack Nerd Font
 RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 RUN unzip Hack.zip -d /usr/local/share/fonts
 
 # Copying modified .bashrc file to the default profile home dir
-COPY .bashrc /home/kasm-default-profile/
+# COPY .bashrc /home/kasm-default-profile/
 
 # Copying terminal profile
-COPY user /home/kasm-default-profile/.config/dconf/
-COPY xfce4/ /home/kasm-default-profile/.config/
-COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
+# COPY user /home/kasm-default-profile/.config/dconf/
+# COPY xfce4/ /home/kasm-default-profile/.config/
+# COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
 
 
 # Adding Starship Theme
-COPY starship.toml /home/kasm-default-profile/.config/
+# COPY starship.toml /home/kasm-default-profile/.config/
 
 # Getting rid off the xfce4-panel
 RUN chmod a-rwx /usr/bin/xfce4-panel
