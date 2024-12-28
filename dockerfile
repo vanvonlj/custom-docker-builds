@@ -106,7 +106,7 @@ COPY .bashrc /home/kasm-default-profile/
 # Copying terminal profile
 COPY user /home/kasm-default-profile/.config/dconf/
 COPY xfce4/ /home/kasm-default-profile/.config/
-COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
+# COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
 
 
 # Adding Starship Theme
