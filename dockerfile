@@ -104,7 +104,7 @@ RUN unzip Hack.zip -d /usr/local/share/fonts
 COPY .bashrc /home/kasm-default-profile/
 
 # Copying terminal profile
-COPY user /home/kasm-default-profile/.config/dconf/
+# COPY user /home/kasm-default-profile/.config/dconf/
 # COPY xfce4/ /home/kasm-default-profile/.config/
 # COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal/
 
