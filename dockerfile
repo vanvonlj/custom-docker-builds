@@ -116,7 +116,7 @@ COPY starship.toml /home/kasm-default-profile/.config/
 # RUN chmod a-rwx /usr/bin/xfce4-panel
 
 # Wallpaper
-COPY wallpaper-kasm.jpg /usr/share/backgrounds/bg_default.png
+# COPY wallpaper-kasm.jpg /usr/share/backgrounds/bg_default.png
 
 
 # ----------------------------------------------------
