@@ -101,7 +101,7 @@ RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.z
 RUN unzip Hack.zip -d /usr/local/share/fonts
 
 # Copying modified .bashrc file to the default profile home dir
-COPY .bashrc /home/kasm-default-profile/
+# COPY .bashrc /home/kasm-default-profile/
 
 # Copying terminal profile
 # COPY user /home/kasm-default-profile/.config/dconf/
