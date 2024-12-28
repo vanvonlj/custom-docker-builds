@@ -103,10 +103,6 @@ RUN unzip Hack.zip -d /usr/local/share/fonts
 # Copying modified .bashrc file to the default profile home dir
 COPY .bashrc /home/kasm-default-profile/
 
-RUN echo 'Directory Output start'
-RUN ls
-RUN echo 'Directory Output finished'
-
 # Copying terminal profile
 COPY user /home/kasm-default-profile/.config/dconf/
 COPY xfce4/ /home/kasm-default-profile/.config/
@@ -114,7 +110,7 @@ COPY xfce4/terminal/terminalrc /home/kasm-default-profile/.config/xfce4/terminal
 
 
 # Adding Starship Theme
-COPY starship.toml /home/kasm-default-profile/.config/
+# COPY starship.toml /home/kasm-default-profile/.config/
 
 # Getting rid off the xfce4-panel
 # RUN chmod a-rwx /usr/bin/xfce4-panel
