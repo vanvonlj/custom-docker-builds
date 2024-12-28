@@ -93,8 +93,8 @@ RUN apt upgrade -y
 RUN apt autoremove -y
 
 # Copying the modified custom_startup.sh (from kasm/terminal:1.15.0)
-COPY custom_startup.sh /dockerstartup/custom_startup.sh
-RUN chmod +x /dockerstartup/custom_startup.sh
+# COPY custom_startup.sh /dockerstartup/custom_startup.sh
+# RUN chmod +x /dockerstartup/custom_startup.sh
 
 # Installing Hack Nerd Font
 RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
