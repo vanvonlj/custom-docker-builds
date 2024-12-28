@@ -17,8 +17,9 @@ jobs:
          registry: ${{ env.REGISTRY }}
          username: ${{ github.actor }}
          password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Build the hello-docker Docker image
+    - name: Build Docker image
       run: |
+            ls
             docker build . --tag ghcr.io/vanvonlj/ubuntu-custom:latest
             docker run ghcr.io/vanvonlj/ubuntu-custom:latest
             docker push ghcr.io/vanvonlj/ubuntu-custom:latest
