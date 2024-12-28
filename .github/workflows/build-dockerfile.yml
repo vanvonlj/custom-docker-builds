@@ -19,7 +19,7 @@ jobs:
          password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build Docker image
       run: |
-            ls
+            ls .
             docker build . --tag ghcr.io/vanvonlj/ubuntu-custom:latest
             docker run ghcr.io/vanvonlj/ubuntu-custom:latest
             docker push ghcr.io/vanvonlj/ubuntu-custom:latest
