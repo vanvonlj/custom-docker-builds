@@ -1,4 +1,4 @@
-FROM kasmweb/ubuntu-noble-desktop
+FROM kasmweb/ubuntu-noble-desktop:1.16.1
 LABEL maintainer="borsatto at mail dot com"
 
 USER root
