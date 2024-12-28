@@ -103,6 +103,10 @@ RUN unzip Hack.zip -d /usr/local/share/fonts
 # Copying modified .bashrc file to the default profile home dir
 COPY .bashrc /home/kasm-default-profile/
 
+RUN echo 'Directory Output start'
+RUN ls
+RUN echo 'Directory Output finished'
+
 # Copying terminal profile
 COPY user /home/kasm-default-profile/.config/dconf/
 COPY xfce4/ /home/kasm-default-profile/.config/
